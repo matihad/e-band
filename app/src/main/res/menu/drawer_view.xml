@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <item
+            android:id="@+id/add_device"
+            android:icon="@drawable/ic_add_circle_outline_black_24dp"
+            android:title="Add device" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Settings" />
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/ic_info_outline_black_24dp"
+            android:title="About us" />
+
+
+
+  <!--  <item android:title="Sub items">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:icon="@drawable/ic_launcher_background"
+                    android:title="Sub item 1" />
+                <item
+                    android:icon="@drawable/ic_launcher_background"
+                    android:title="Sub item 2" />
+            </group>
+        </menu>
+    </item>
+-->
+
+</menu>

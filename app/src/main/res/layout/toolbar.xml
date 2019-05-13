@@ -1,0 +1,57 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_60sdp"
+    android:background="?attr/colorPrimary"
+    android:elevation="@dimen/_12sdp"
+    android:fitsSystemWindows="true"
+    android:minHeight="?attr/actionBarSize"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/toggle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="-10dp"
+            android:layout_weight="2.6"
+            android:background="#00000000"
+            android:padding="@dimen/_8sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_white_24dp" />
+
+        <TextView
+            android:textAlignment="viewStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Home "
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <ImageButton
+            android:id="@+id/btn_more"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center"
+            android:layout_weight="2.5"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:padding="@dimen/_11sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_more_24dp" />
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.Toolbar>

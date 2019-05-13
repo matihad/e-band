@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">E Band</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="enter_username_or_phone_number">enter username or phone number here</string>
+    <string name="not_signed_up_yet">Not Signed Up Yet?</string>
+    <string name="enter_your_password">enter your password</string>
+    <string name="enter_your_name">enter your name</string>
+    <string name="email_or_phone_number">email or phone number</string>
+    <string name="enter_your_email_or_phone_number">enter your email or phone number</string>
+    <string name="repeat_password">repeat password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="repeat_your_password">repeat your password</string>
+    <string name="check">Check</string>
+    <string name="enter_the_code">Enter The Code</string>
+    <string name="account_type">account type</string>
+    <string name="number_of_added_devices">number of added devices</string>
+    <string name="application_s_language">application\'s language</string>
+    <string name="save">Save</string>
+    <string name="patient_name">patient name</string>
+    <string name="enter_patient_name">enter patient name</string>
+    <string name="patient_age">patient age</string>
+    <string name="enter_patient_age">enter patient age</string>
+    <string name="device_address">device address</string>
+    <string name="enter_patient_s_device_address">enter patient\'s device address</string>
+    <string name="add_new_device">Add New Device</string>
+    <string name="patient_weight">patient weight</string>
+    <string name="enter_patient_weight">enter patient weight</string>
+    <string name="see_full_information">See Full Information</string>
+
+    <string-array name="account_types">
+        <item>Choose your Account type</item>
+        <item>Hospital</item>
+        <item>Personal</item>
+        <item>School</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Persian</item>
+    </string-array>
+
+
+    <!--intro sliders strings-->
+
+    <string name="slide_1_title">Hello Food!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+
+    <string name="slide_2_title">Movie Tickets</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends</string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets for any transportation and travel the world</string>
+
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="gotit">Got It</string>
+
+
+    <string-array name="slide_titles">
+        <item>@string/slide_1_title</item>
+        <item>@string/slide_2_title</item>
+        <item>@string/slide_3_title</item>
+        <item>@string/slide_4_title</item>
+    </string-array>
+
+
+    <string-array name="slide_descriptions">
+        <item>@string/slide_1_desc</item>
+        <item>@string/slide_2_desc</item>
+        <item>@string/slide_3_desc</item>
+        <item>@string/slide_4_desc</item>
+    </string-array>
+
+    <!--intro sliders strings-->
+
+</resources>
