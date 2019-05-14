@@ -1,6 +1,7 @@
 package mahdihadian.gholhak.ehealth;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton toggle, btn_more;
     ListView detail_list;
     List<UserModel> userModels;
+
 
 
     @Override
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(DetailActivity.KEY_AGE, userModels.get(position).getAge());
                 intent.putExtra(DetailActivity.KEY_STATUS, userModels.get(position).getStatus());
                 startActivity(intent);
+
+
 
             }
         });
@@ -94,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 //    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
     private void generateList() {
         userModels = new ArrayList<>();
-        UserModel u1 = new UserModel("Farhad ahmadi", "Good" + emoji_good, 25, 35.5, 62);
+        UserModel u1 = new UserModel("Farhad", "Risk" + emoji_good, 25, 35.5, 62);
         UserModel u2 = new UserModel("Ali", "Risk" + emoji_risk, 45, 85.5, 77);
         UserModel u3 = new UserModel("Sara", "Good" + emoji_good, 99, 86, 35);
         UserModel u4 = new UserModel("Hasan", "Warning" + emoji_warning, 35, 40.8, 50);
@@ -104,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
         UserModel u8 = new UserModel("Shadi", "Good" + emoji_good, 40, 35.5, 73);
         UserModel u9 = new UserModel("Taha", "Warning" + emoji_warning, 25, 63.5, 22);
         UserModel u10 = new UserModel("Danial", "Good" + emoji_good, 27, 37.4, 44);
+
+
 
         userModels.add(u1);
         userModels.add(u2);
