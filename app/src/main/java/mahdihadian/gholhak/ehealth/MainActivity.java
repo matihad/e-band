@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
-    String emoji_risk = "\uD83D\uDEA8", emoji_warning = "\uD83D\uDD14", emoji_normal = "\uD83D\uDE01", emoji_good = "\uD83E\uDD24";
+    String emoji_risk = "\uD83D\uDEA8", emoji_warning = "\uD83D\uDD14",
+            emoji_normal = "\uD83D\uDE01", emoji_good = "\uD83E\uDD24";
     ImageButton toggle, btn_more;
     ListView detail_list;
     List<UserModel> userModels;
@@ -41,45 +42,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bind();
         setSupportActionBar(toolbar);
+        generateList();
 
         toggle.setOnClickListener(V -> {
             if (!mDrawer.isDrawerOpen(Gravity.START)) {
                 mDrawer.openDrawer(Gravity.START);
             }
         });
-
         btn_more.setOnClickListener(V->{
             onPopupButtonClick(btn_more);
         });
-
-        userModels = new ArrayList<>();
-
-
-        UserModel u1 = new UserModel("Farhad", "Good" + emoji_good, 25, 35.5, 62);
-        UserModel u2 = new UserModel("Ali", "Risk" + emoji_risk, 45, 85.5, 77);
-        UserModel u3 = new UserModel("Sara", "Good" + emoji_good, 99, 86, 35);
-        UserModel u4 = new UserModel("Hasan", "Warning" + emoji_warning, 35, 40.8, 50);
-        UserModel u5 = new UserModel("Mahdi", "Good" + emoji_good, 21, 35, 80);
-        UserModel u6 = new UserModel("Hadi", "normal" + emoji_normal, 36, 70.3, 31);
-        UserModel u7 = new UserModel("Firooz", "Risk" + emoji_risk, 63, 35.5, 62);
-        UserModel u8 = new UserModel("Shadi", "Good" + emoji_good, 40, 35.5, 73);
-        UserModel u9 = new UserModel("Taha", "Warning" + emoji_warning, 25, 63.5, 22);
-        UserModel u10 = new UserModel("Danial", "Good" + emoji_good, 27, 37.4, 44);
-
-        userModels.add(u1);
-        userModels.add(u2);
-        userModels.add(u3);
-        userModels.add(u4);
-        userModels.add(u5);
-        userModels.add(u6);
-        userModels.add(u7);
-        userModels.add(u8);
-        userModels.add(u9);
-        userModels.add(u10);
-
-        ListAdapter listAdapter = new ListAdapter(this, userModels);
-        detail_list.setAdapter(listAdapter);
-
         detail_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -93,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         nvDrawer.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -119,6 +90,35 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+//    baraye in method bayad parameter bezarim ke age
+//    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
+    private void generateList() {
+        userModels = new ArrayList<>();
+        UserModel u1 = new UserModel("Farhad ahmadi", "Good" + emoji_good, 25, 35.5, 62);
+        UserModel u2 = new UserModel("Ali", "Risk" + emoji_risk, 45, 85.5, 77);
+        UserModel u3 = new UserModel("Sara", "Good" + emoji_good, 99, 86, 35);
+        UserModel u4 = new UserModel("Hasan", "Warning" + emoji_warning, 35, 40.8, 50);
+        UserModel u5 = new UserModel("Mahdi", "Good" + emoji_good, 21, 35, 80);
+        UserModel u6 = new UserModel("Hadi", "Normal" + emoji_normal, 36, 70.3, 31);
+        UserModel u7 = new UserModel("Firooz", "Risk" + emoji_risk, 63, 35.5, 62);
+        UserModel u8 = new UserModel("Shadi", "Good" + emoji_good, 40, 35.5, 73);
+        UserModel u9 = new UserModel("Taha", "Warning" + emoji_warning, 25, 63.5, 22);
+        UserModel u10 = new UserModel("Danial", "Good" + emoji_good, 27, 37.4, 44);
+
+        userModels.add(u1);
+        userModels.add(u2);
+        userModels.add(u3);
+        userModels.add(u4);
+        userModels.add(u5);
+        userModels.add(u6);
+        userModels.add(u7);
+        userModels.add(u8);
+        userModels.add(u9);
+        userModels.add(u10);
+
+        ListAdapter listAdapter = new ListAdapter(this, userModels);
+        detail_list.setAdapter(listAdapter);
+    }
 
     void bind() {
 
@@ -137,13 +137,9 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawer.openDrawer(GravityCompat.START);
                 return true;
-
-
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 
     public void onPopupButtonClick(View button) {
         PopupMenu popup = new PopupMenu(this, button);
@@ -151,10 +147,13 @@ public class MainActivity extends AppCompatActivity {
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
                 Toast.makeText(MainActivity.this,  item.getTitle(), Toast.LENGTH_SHORT).show();
+//                switch mizarim ke harkudum bud parameter pass bedim be methode
+//                generateList(String "sort by age");
+//                generateList(String "sort by name");
+//                generateList(String "sort by status");
                 return true;
             }
         });
-
         popup.show();
     }
 

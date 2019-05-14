@@ -31,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
     //    a range between 60-100
-    private float[] values = new float[]{
+    private float[] values_heartrate = new float[]{
             70, 71, 74, 80, 73, 75, 82, 64, 69, 70,
             68, 72, 78, 70, 75, 74, 69, 73, 77, 58,
             73, 65, 74, 76, 72, 78, 71, 74, 67, 64,
@@ -46,53 +46,45 @@ public class DetailActivity extends AppCompatActivity {
             82, 64, 70, 83, 89, 69, 73, 84, 76, 79,
             81, 80, 74, 77, 66, 68, 77, 79, 78, 77
     };
+    private float[] values_bodytemp = new float[]{
+            36, 36, 36, 36, 36, 36, 35, 35, 35, 35,
+            35, 35, 35, 37, 37, 37, 37, 37,
+    };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        bind();
-//        generateHeartBeatValue();
-
         setSupportActionBar(toolbar_detail);
+        bind();
+        setPatientInfo();
+        generateHeartBeatValue();
+        generateBodyTemp();
 
         back.setOnClickListener(V -> {
             finish();
         });
 
-        // Received data from mainAct
-        Bundle bundle = getIntent().getExtras();
-        String name = bundle.getString(KEY_NAME);
-        int age = bundle.getInt(KEY_AGE);
-        String status = bundle.getString(KEY_STATUS);
-
-        patient_name.setText(name);
-        patient_status.setText(status);
-        patient_age.setText(String.valueOf(age));
-
     }
-
 
     private void bind() {
 
         patient_name = findViewById(R.id.patient_name);
         patient_age = findViewById(R.id.patient_age);
         patient_status = findViewById(R.id.patient_status);
-
-
         toolbar_detail = findViewById(R.id.toolbar_detail);
         back = findViewById(R.id.back);
-
-
-//            chart_snake = findViewById(R.id.chart_snake);
-//            chart_bodyTemp = findViewById(R.id.chart_bodyTemp);
-//            chart_snake.setMaxValue(100);
-//            chart_snake.setMinValue(50);
-//            txt_temp = findViewById(R.id.txt_temp);
-//            txt_beat = findViewById(R.id.txt_beat);
+//        charts
+        chart_snake = findViewById(R.id.chart_snake);
+        chart_bodyTemp = findViewById(R.id.chart_bodyTemp);
+        txt_temp = findViewById(R.id.txt_temp);
+        txt_beat = findViewById(R.id.txt_beat);
+        chart_snake.setMaxValue(100);
+        chart_snake.setMinValue(50);
+        chart_bodyTemp.setMaxValue(40);
+        chart_bodyTemp.setMinValue(32);
     }
-
 
     @Override
     protected void onStart() {
@@ -106,23 +98,56 @@ public class DetailActivity extends AppCompatActivity {
         stop = true;
     }
 
-//        private void generateHeartBeatValue () {
-//            if (position < (values.length - 1)) {
-//                position++;
-//            } else {
-//                position = 0;
-//            }
-//            double value = values[position];
-//            chart_snake.addValue((float) value);
-//            txt_beat.setText(((int) value + ""));
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    if (!stop) {
-//                        generateHeartBeatValue();
-//                    }
-//                }
-//            }, 1000);
+    private void generateHeartBeatValue() {
+        if (position < (values_heartrate.length - 1)) {
+            position++;
+        } else {
+            position = 0;
+        }
+        double value = values_heartrate[position];
+        chart_snake.addValue((float) value);
+        txt_beat.setText(((int) value + ""));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (!stop) {
+                    generateHeartBeatValue();
+                }
+            }
+        }, 500);
+    }
+
+    private void generateBodyTemp() {
+        if (position < (values_bodytemp.length - 1)) {
+            position++;
+        } else {
+            position = 0;
+        }
+        double value = values_bodytemp[position];
+        chart_bodyTemp.addValue((float) value);
+        txt_temp.setText(((int) value + ""));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (!stop) {
+                    generateBodyTemp();
+                }
+            }
+        }, 1000);
+    }
+
+    private void setPatientInfo() {
+        // Received data from mainAct
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString(KEY_NAME);
+        int age = bundle.getInt(KEY_AGE);
+        String status = bundle.getString(KEY_STATUS);
+
+        patient_name.setText(name);
+        patient_status.setText(status);
+        patient_age.setText(String.valueOf(age));
+
+    }
 
 }
 
