@@ -1,5 +1,6 @@
 package mahdihadian.gholhak.ehealth.Utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
@@ -39,6 +40,7 @@ public class ListAdapter extends BaseAdapter {
         return position;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(mContext).inflate(R.layout.list_detail, parent, false);
@@ -58,19 +60,17 @@ public class ListAdapter extends BaseAdapter {
 
         //        TODO set flat colors (integer data types...)
 
-        switch (userModels.get(position).getStatus()) {
-            case "Warning":
-                layout.setBackgroundColor(Color.YELLOW);
-                break;
-            case "Risk":
-                layout.setBackgroundColor(Color.RED);
-                break;
-            case "Good":
-                layout.setBackgroundColor(Color.GREEN);
-                break;
-            case "Normal":
-                layout.setBackgroundColor(Color.WHITE);
-                break;
+        if (userModels.get(position).getStatus().contains("Risk")) {
+            convertView.setBackgroundColor(Color.rgb(255, 30, 0));
+        }
+        if (userModels.get(position).getStatus().contains("Good")) {
+            convertView.setBackgroundColor(Color.rgb(54, 163, 58));
+        }
+        if (userModels.get(position).getStatus().contains("Normal")) {
+            convertView.setBackgroundColor(Color.rgb(0, 102, 204));
+        }
+        if (userModels.get(position).getStatus().contains("Warning")) {
+            convertView.setBackgroundColor(Color.rgb(255, 152, 0));
         }
 
         return convertView;
