@@ -61,16 +61,20 @@ public class ListAdapter extends BaseAdapter {
         //        TODO set flat colors (integer data types...)
 
         if (userModels.get(position).getStatus().contains("Risk")) {
-            convertView.setBackgroundColor(Color.rgb(255, 30, 0));
+//            red
+            convertView.setBackgroundColor(Color.rgb(211, 47, 47));
         }
         if (userModels.get(position).getStatus().contains("Good")) {
-            convertView.setBackgroundColor(Color.rgb(54, 163, 58));
+//            green
+            convertView.setBackgroundColor(Color.rgb(56, 142, 60));
         }
         if (userModels.get(position).getStatus().contains("Normal")) {
-            convertView.setBackgroundColor(Color.rgb(0, 102, 204));
+//            blue
+            convertView.setBackgroundColor(Color.rgb(2, 136, 209));
         }
         if (userModels.get(position).getStatus().contains("Warning")) {
-            convertView.setBackgroundColor(Color.rgb(255, 152, 0));
+//            yellow
+            convertView.setBackgroundColor(Color.rgb(251, 192, 45));
         }
 
         return convertView;
