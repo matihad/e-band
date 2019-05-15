@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
-    String emoji_risk = "\uD83D\uDEA8", emoji_warning = "\uD83D\uDD14",
-            emoji_normal = "\uD83D\uDE01", emoji_good = "\uD83E\uDD24";
     ImageButton toggle, btn_more;
     ListView detail_list;
     List<UserModel> userModels;
@@ -59,15 +57,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(MainActivity.this,userModels.get(position).getName(),Toast.LENGTH_LONG).show();
-
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                 intent.putExtra(DetailActivity.KEY_NAME, userModels.get(position).getName());
                 intent.putExtra(DetailActivity.KEY_AGE, userModels.get(position).getAge());
                 intent.putExtra(DetailActivity.KEY_STATUS, userModels.get(position).getStatus());
                 startActivity(intent);
-
-
-
             }
         });
         nvDrawer.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -99,16 +93,16 @@ public class MainActivity extends AppCompatActivity {
 //    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
     private void generateList() {
         userModels = new ArrayList<>();
-        UserModel u1 = new UserModel("Farhad", "Risk" + emoji_good, 25, 35.5, 62);
-        UserModel u2 = new UserModel("Ali", "Risk" + emoji_risk, 45, 85.5, 77);
-        UserModel u3 = new UserModel("Sara", "Good" + emoji_good, 99, 86, 35);
-        UserModel u4 = new UserModel("Hasan", "Warning" + emoji_warning, 35, 40.8, 50);
-        UserModel u5 = new UserModel("Mahdi", "Good" + emoji_good, 21, 35, 80);
-        UserModel u6 = new UserModel("Hadi", "Normal" + emoji_normal, 36, 70.3, 31);
-        UserModel u7 = new UserModel("Firooz", "Risk" + emoji_risk, 63, 35.5, 62);
-        UserModel u8 = new UserModel("Shadi", "Good" + emoji_good, 40, 35.5, 73);
-        UserModel u9 = new UserModel("Taha", "Warning" + emoji_warning, 25, 63.5, 22);
-        UserModel u10 = new UserModel("Danial", "Good" + emoji_good, 27, 37.4, 44);
+        UserModel u1 = new UserModel("Farhad", "Normal" , 25, 35.5, 62);
+        UserModel u2 = new UserModel("Ali", "Risk", 45, 85.5, 77);
+        UserModel u3 = new UserModel("Sara", "Good" , 99, 86, 35);
+        UserModel u4 = new UserModel("Hasan", "Warning" , 35, 40.8, 50);
+        UserModel u5 = new UserModel("Mahdi", "Good" , 21, 35, 80);
+        UserModel u6 = new UserModel("Hadi", "Normal" , 36, 70.3, 31);
+        UserModel u7 = new UserModel("Firooz", "Risk" , 63, 35.5, 62);
+        UserModel u8 = new UserModel("Shadi", "Good" , 40, 35.5, 73);
+        UserModel u9 = new UserModel("Taha", "Warning" , 25, 63.5, 22);
+        UserModel u10 = new UserModel("Danial", "Good" , 27, 37.4, 44);
 
 
 

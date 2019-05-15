@@ -114,7 +114,7 @@ public class DetailActivity extends AppCompatActivity {
                     generateHeartBeatValue();
                 }
             }
-        }, 500);
+        }, 700);
     }
 
     private void generateBodyTemp() {
