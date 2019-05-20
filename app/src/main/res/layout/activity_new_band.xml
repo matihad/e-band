@@ -104,6 +104,13 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/checked"
+                android:text="click here to..."
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp" />
+
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/add_device"
