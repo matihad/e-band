@@ -39,7 +39,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp">
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/patient_age"
@@ -52,7 +52,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp">
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/patient_weight"
@@ -65,7 +65,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp">
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/patient_sex"
@@ -79,7 +79,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp">
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/patient_bloodType"
@@ -94,7 +94,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp">
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/device_address"
