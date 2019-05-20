@@ -1,9 +1,16 @@
 package mahdihadian.gholhak.ehealth;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     List<UserModel> userModels;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +52,23 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         generateList();
 
+
+        detail_list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                showNotification(MainActivity.this, "Title", "Body", intent);
+                return false;
+            }
+        });
+
+
         toggle.setOnClickListener(V -> {
             if (!mDrawer.isDrawerOpen(Gravity.START)) {
                 mDrawer.openDrawer(Gravity.START);
             }
         });
-        btn_more.setOnClickListener(V->{
+        btn_more.setOnClickListener(V -> {
             onPopupButtonClick(btn_more);
         });
         detail_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,21 +107,55 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    baraye in method bayad parameter bezarim ke age
-//    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
+
+    public void showNotification(Context context, String title, String body, Intent intent) {
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+        int notificationId = 1;
+        String channelId = "channel-01";
+        String channelName = "Channel Name";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(
+                    channelId, channelName, importance);
+            notificationManager.createNotificationChannel(mChannel);
+        }
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channelId)
+                .setSmallIcon(R.drawable.about_icon_email)
+                .setContentTitle(title)
+                .setContentText(body);
+
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+        stackBuilder.addNextIntent(intent);
+        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                0,
+                PendingIntent.FLAG_UPDATE_CURRENT
+        );
+
+        mBuilder.setContentIntent(resultPendingIntent);
+        notificationManager.notify(notificationId, mBuilder.build());
+    }
+
+
+
+
+    //    baraye in method bayad parameter bezarim ke age
+    //    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
     private void generateList() {
         userModels = new ArrayList<>();
-        UserModel u1 = new UserModel("Farhad", "Normal" , 25, 35.5, 62);
+        UserModel u1 = new UserModel("Farhad", "Normal", 25, 35.5, 62);
         UserModel u2 = new UserModel("Ali", "Risk", 45, 85.5, 77);
-        UserModel u3 = new UserModel("Sara", "Good" , 99, 86, 35);
-        UserModel u4 = new UserModel("Hasan", "Warning" , 35, 40.8, 50);
-        UserModel u5 = new UserModel("Mahdi", "Good" , 21, 35, 80);
-        UserModel u6 = new UserModel("Hadi", "Normal" , 36, 70.3, 31);
-        UserModel u7 = new UserModel("Firooz", "Risk" , 63, 35.5, 62);
-        UserModel u8 = new UserModel("Shadi", "Good" , 40, 35.5, 73);
-        UserModel u9 = new UserModel("Taha", "Warning" , 25, 63.5, 22);
-        UserModel u10 = new UserModel("Danial", "Good" , 27, 37.4, 44);
-
+        UserModel u3 = new UserModel("Sara", "Good", 99, 86, 35);
+        UserModel u4 = new UserModel("Hasan", "Warning", 35, 40.8, 50);
+        UserModel u5 = new UserModel("Mahdi", "Good", 21, 35, 80);
+        UserModel u6 = new UserModel("Hadi", "Normal", 36, 70.3, 31);
+        UserModel u7 = new UserModel("Firooz", "Risk", 63, 35.5, 62);
+        UserModel u8 = new UserModel("Shadi", "Good", 40, 35.5, 73);
+        UserModel u9 = new UserModel("Taha", "Warning", 25, 63.5, 22);
+        UserModel u10 = new UserModel("Danial", "Good", 27, 37.4, 44);
 
 
         userModels.add(u1);
@@ -147,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(MainActivity.this,  item.getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
 //                switch mizarim ke harkudum bud parameter pass bedim be methode
 //                generateList(String "sort by age");
 //                generateList(String "sort by name");
@@ -157,7 +209,6 @@ public class MainActivity extends AppCompatActivity {
         });
         popup.show();
     }
-
 
 
 }
