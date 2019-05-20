@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".NewBandActivity"
-
-    >
+    tools:context=".NewBandActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,12 +68,42 @@
                 android:layout_marginTop="@dimen/_20sdp">
 
                 <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/patient_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_patient_sex" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/patient_bloodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_patient_blood_type" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- sabeqe bimari -->
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/device_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/enter_patient_s_device_address" />
 
             </android.support.design.widget.TextInputLayout>
+
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/add_device"

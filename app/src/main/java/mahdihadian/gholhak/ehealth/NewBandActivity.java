@@ -13,10 +13,11 @@ public class NewBandActivity extends AppCompatActivity {
 
     Toolbar toolbar_add_device;
     ImageButton back;
-
-
-    EditText patient_name, patient_age, patient_weight, device_address;
     Button add_device;
+    EditText patient_name, patient_age,
+    patient_weight, device_address,
+    patient_sex, patient_bloodType;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,21 +26,20 @@ public class NewBandActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar_add_device);
 
-        back.setOnClickListener(V->{
+        back.setOnClickListener(V -> {
             finish();
         });
 
-        add_device.setOnClickListener(v->{
+        add_device.setOnClickListener(v -> {
             if (!(patient_name.toString().equals("")) && !(patient_age.toString().equals(""))
-                    && !(patient_weight.toString().equals("")) && !(device_address.toString().equals("")) ){
+                    && !(patient_weight.toString().equals("")) && !(device_address.toString().equals("")
+                    && !(patient_sex.toString().equals("") && !(patient_bloodType.toString().equals("")))))
+            {
 
-                Toast.makeText(this, "new device has been added", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, MainActivity.class));
-                // send data to db and show in main activity
+                startActivity(new Intent(this, VerifyBandActivity.class));
+                // send data to db then show in main activity
 
             }
-
-
         });
 
     }
@@ -50,6 +50,8 @@ public class NewBandActivity extends AppCompatActivity {
         patient_weight = findViewById(R.id.patient_weight);
         device_address = findViewById(R.id.device_address);
         add_device = findViewById(R.id.add_device);
+        patient_sex = findViewById(R.id.patient_sex);
+        patient_bloodType = findViewById(R.id.patient_bloodType);
 
         toolbar_add_device = findViewById(R.id.toolbar_add_device);
         back = findViewById(R.id.back);

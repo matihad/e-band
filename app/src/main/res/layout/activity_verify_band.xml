@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".VerifyBandActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/verify_code"
+            android:layout_width="@dimen/_118sdp"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_the_code"
+            android:inputType="number" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/verify_check"
+        style="@style/Widget.AppCompat.ButtonBar"
+        android:layout_width="@dimen/_118sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/background_button"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_4sdp"
+        android:text="@string/check"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_13sdp" />
+
+
+</LinearLayout>

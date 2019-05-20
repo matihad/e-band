@@ -59,6 +59,8 @@
     <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="gotit">Got It</string>
+    <string name="enter_patient_sex">enter patinet sex</string>
+    <string name="enter_patient_blood_type">enter patient blood type</string>
 
 
     <string-array name="slide_titles">
