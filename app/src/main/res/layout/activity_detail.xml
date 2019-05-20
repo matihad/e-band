@@ -21,12 +21,68 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_90sdp"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/patient_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/_18sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/patient_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+
+                            android:textSize="@dimen/_18sdp" />
+
+                        <TextView
+                            android:id="@+id/patient_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:textSize="@dimen/_18sdp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
             <!-- patient info : name age status -->
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/_30sdp"
@@ -68,128 +124,129 @@
                         android:textSize="@dimen/_18sdp"
                         android:textStyle="bold" />
 
-                </LinearLayout>
-            </LinearLayout>
+                </LinearLayout>-->
+        </LinearLayout>
 
-            <!-- Heart Rate -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+        <!-- Heart Rate -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_beat"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="70"
+                android:textColor="#000"
+                android:textSize="@dimen/_18sdp" />
 
-                <TextView
-                    android:id="@+id/txt_beat"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="70"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_18sdp" />
-
-                <TextView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="bpm ❤"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_12sdp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="@dimen/_13sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="bpm ❤"
+                android:textColor="#000"
+                android:textSize="@dimen/_12sdp" />
 
-                <TextView
-                    android:id="@+id/txt_temp"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="35"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_18sdp" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="°C"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_12sdp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            </LinearLayout>
-
-            <!-- Blood Pressure -->
-            <LinearLayout
-                android:layout_marginTop="@dimen/_13sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/txt_temp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="35"
+                android:textColor="#000"
+                android:textSize="@dimen/_18sdp" />
 
-                <TextView
-                    android:id="@+id/txt_blood_pressure"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="70"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_18sdp" />
-
-                <TextView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_12sdp" />
-
-            </LinearLayout>
-
-            <!-- Oxygen -->
-            <LinearLayout
-                android:layout_marginTop="@dimen/_13sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="°C"
+                android:textColor="#000"
+                android:textSize="@dimen/_12sdp" />
 
-                <TextView
-                    android:id="@+id/txt_oxygen"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="100"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_18sdp" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_12sdp" />
+        <!-- Blood Pressure -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/txt_blood_pressure"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="70"
+                android:textColor="#000"
+                android:textSize="@dimen/_18sdp" />
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+        <!-- Oxygen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_oxygen"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="100"
+                android:textColor="#000"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="@dimen/_12sdp" />
+
 
         </LinearLayout>
 
     </LinearLayout>
 
 </LinearLayout>
+
+    <!--
+    </LinearLayout>-->
