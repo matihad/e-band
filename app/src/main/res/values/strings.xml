@@ -81,4 +81,11 @@
 
     <!--intro sliders strings-->
 
+
+    //notification strings
+    <string name="channel_name">MyChannel</string>
+
+
+
+
 </resources>
