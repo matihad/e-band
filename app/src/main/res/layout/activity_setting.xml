@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SettingActivity"
-
-    >
+    tools:context=".SettingActivity">
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -25,8 +23,7 @@
           android:layout_height="match_parent"
           android:orientation="vertical"
           android:gravity="center"
-          android:padding="@dimen/_10sdp"
-          >
+          android:padding="@dimen/_10sdp" >
 
           <!-- user's name -->
           <TextView
@@ -44,7 +41,7 @@
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginTop="@dimen/_20sdp"
+              android:layout_marginTop="@dimen/_10sdp"
               android:text="@string/account_type" />
 
           <TextView
@@ -58,7 +55,7 @@
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginTop="@dimen/_20sdp"
+              android:layout_marginTop="@dimen/_10sdp"
               android:text="@string/email_or_phone_number" />
 
           <TextView
@@ -71,7 +68,7 @@
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginTop="@dimen/_20sdp"
+              android:layout_marginTop="@dimen/_10sdp"
               android:text="@string/number_of_added_devices" />
 
           <TextView
@@ -84,7 +81,7 @@
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginTop="@dimen/_20sdp"
+              android:layout_marginTop="@dimen/_10sdp"
               android:text="@string/application_s_language" />
 
           <!-- language spinner -->
@@ -95,12 +92,25 @@
 
           </Spinner>
 
+          <android.support.design.widget.TextInputLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/_10sdp" >
+              <android.support.v7.widget.AppCompatEditText
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/emergency_number"
+                  android:hint="@string/emergency_number" />
+
+          </android.support.design.widget.TextInputLayout>
+
+
           <Button
               android:id="@+id/save_info"
               style="@style/Widget.AppCompat.ButtonBar"
               android:layout_width="@dimen/_118sdp"
               android:layout_height="wrap_content"
-              android:layout_marginTop="@dimen/_40sdp"
+              android:layout_marginTop="@dimen/_30sdp"
               android:background="@drawable/background_button"
               android:clickable="true"
               android:foreground="?attr/selectableItemBackgroundBorderless"

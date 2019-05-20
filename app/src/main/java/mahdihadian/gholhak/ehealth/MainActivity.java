@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     List<UserModel> userModels;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 mDrawer.openDrawer(Gravity.START);
             }
         });
-        btn_more.setOnClickListener(V->{
+        btn_more.setOnClickListener(V -> {
             onPopupButtonClick(btn_more);
         });
         detail_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,21 +88,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    baraye in method bayad parameter bezarim ke age
+    //    baraye in method bayad parameter bezarim ke age
 //    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
     private void generateList() {
         userModels = new ArrayList<>();
-        UserModel u1 = new UserModel("Farhad", "Normal" , 25, 35.5, 62);
-        UserModel u2 = new UserModel("Ali", "Risk", 45, 85.5, 77);
-        UserModel u3 = new UserModel("Sara", "Good" , 99, 86, 35);
-        UserModel u4 = new UserModel("Hasan", "Warning" , 35, 40.8, 50);
-        UserModel u5 = new UserModel("Mahdi", "Good" , 21, 35, 80);
-        UserModel u6 = new UserModel("Hadi", "Normal" , 36, 70.3, 31);
-        UserModel u7 = new UserModel("Firooz", "Risk" , 63, 35.5, 62);
-        UserModel u8 = new UserModel("Shadi", "Good" , 40, 35.5, 73);
-        UserModel u9 = new UserModel("Taha", "Warning" , 25, 63.5, 22);
-        UserModel u10 = new UserModel("Danial", "Good" , 27, 37.4, 44);
-
+        UserModel u1 = new UserModel("Farhad Mohseni", "Normal", 25, 35.5, 62);
+        UserModel u2 = new UserModel("Ali Farahmand", "Risk", 45, 85.5, 77);
+        UserModel u3 = new UserModel("Sara quchani zargari", "Good", 99, 86, 35);
+        UserModel u4 = new UserModel("Hasan piri damaqi", "Warning", 35, 40.8, 50);
+        UserModel u5 = new UserModel("Mahdi Afzali", "Good", 21, 35, 80);
+        UserModel u6 = new UserModel("Hadi Ashtarani", "Normal", 36, 70.3, 31);
+        UserModel u7 = new UserModel("Firooz Naderi", "Risk", 63, 35.5, 62);
+        UserModel u8 = new UserModel("Shadi Haqiqi", "Good", 40, 35.5, 73);
+        UserModel u9 = new UserModel("Taha Taheri goodarzi", "Warning", 25, 63.5, 22);
+        UserModel u10 = new UserModel("Danial qasemi", "Good", 27, 37.4, 44);
 
 
         userModels.add(u1);
@@ -122,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void bind() {
-
         nvDrawer = findViewById(R.id.nvView);
         toggle = findViewById(R.id.toggle);
         toolbar = findViewById(R.id.toolbar);
@@ -147,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(MainActivity.this,  item.getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
 //                switch mizarim ke harkudum bud parameter pass bedim be methode
 //                generateList(String "sort by age");
 //                generateList(String "sort by name");
@@ -157,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         });
         popup.show();
     }
-
 
 
 }
