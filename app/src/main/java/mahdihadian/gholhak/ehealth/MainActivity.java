@@ -61,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
         toggle.setOnClickListener(V -> {
             if (!mDrawer.isDrawerOpen(Gravity.START)) {
                 mDrawer.openDrawer(Gravity.START);
@@ -107,8 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
     public void showNotification(Context context, String title, String body, Intent intent) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -139,9 +135,6 @@ public class MainActivity extends AppCompatActivity {
         mBuilder.setContentIntent(resultPendingIntent);
         notificationManager.notify(notificationId, mBuilder.build());
     }
-
-
-
 
     //    baraye in method bayad parameter bezarim ke age
     //    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare

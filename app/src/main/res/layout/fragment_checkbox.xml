@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check 1" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check 2" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check 3" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check 4" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check 5" />
+
+</LinearLayout>

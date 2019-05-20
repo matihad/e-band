@@ -7,7 +7,10 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import mahdihadian.gholhak.ehealth.Utils.CheckBoxDialog;
 
 public class NewBandActivity extends AppCompatActivity {
 
@@ -17,6 +20,7 @@ public class NewBandActivity extends AppCompatActivity {
     EditText patient_name, patient_age,
     patient_weight, device_address,
     patient_sex, patient_bloodType;
+    TextView checked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,11 @@ public class NewBandActivity extends AppCompatActivity {
             }
         });
 
+
+        checked.setOnClickListener(v->{
+            CheckBoxDialog dialog = new CheckBoxDialog();
+            dialog.show(getSupportFragmentManager(), null);
+        });
     }
 
     private void bind() {
@@ -52,8 +61,8 @@ public class NewBandActivity extends AppCompatActivity {
         add_device = findViewById(R.id.add_device);
         patient_sex = findViewById(R.id.patient_sex);
         patient_bloodType = findViewById(R.id.patient_bloodType);
-
         toolbar_add_device = findViewById(R.id.toolbar_add_device);
         back = findViewById(R.id.back);
+        checked = findViewById(R.id.checked);
     }
 }
