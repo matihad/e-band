@@ -3,6 +3,7 @@ package mahdihadian.gholhak.ehealth;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,8 +14,7 @@ public class SettingActivity extends AppCompatActivity {
 
     Toolbar toolbar_settings;
     ImageButton back;
-
-
+    AppCompatEditText emergency_number;
     Spinner spinner_language;
     Button save_info;
 
@@ -42,9 +42,8 @@ public class SettingActivity extends AppCompatActivity {
     private void bind() {
         spinner_language = findViewById(R.id.spinner_language);
         save_info = findViewById(R.id.save_info);
-
+        emergency_number = findViewById(R.id.emergency_number);
         toolbar_settings = findViewById(R.id.toolbar_settings);
         back= findViewById(R.id.back);
-
     }
 }

@@ -61,6 +61,7 @@
     <string name="gotit">Got It</string>
     <string name="enter_patient_sex">enter patinet sex</string>
     <string name="enter_patient_blood_type">enter patient blood type</string>
+    <string name="emergency_number">Emergency number</string>
 
 
     <string-array name="slide_titles">

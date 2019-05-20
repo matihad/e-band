@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void showNotification(Context context, String title, String body, Intent intent) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -157,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
         UserModel u9 = new UserModel("Taha", "Warning", 25, 63.5, 22);
         UserModel u10 = new UserModel("Danial", "Good", 27, 37.4, 44);
 
-
         userModels.add(u1);
         userModels.add(u2);
         userModels.add(u3);
@@ -174,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void bind() {
-
         nvDrawer = findViewById(R.id.nvView);
         toggle = findViewById(R.id.toggle);
         toolbar = findViewById(R.id.toolbar);
