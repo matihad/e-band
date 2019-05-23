@@ -6,6 +6,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -28,6 +30,7 @@ import android.widget.ListView;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,11 +75,20 @@ public class MainActivity extends AppCompatActivity {
         detail_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(MainActivity.this,userModels.get(position).getName(),Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                 intent.putExtra(DetailActivity.KEY_NAME, userModels.get(position).getName());
                 intent.putExtra(DetailActivity.KEY_AGE, userModels.get(position).getAge());
                 intent.putExtra(DetailActivity.KEY_STATUS, userModels.get(position).getStatus());
+
+                //TODO ->   Send avatar to detailAct
+                // Convert Bitmap to Byte Array:-
+                Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.image_profile);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bmp.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                //Pass byte array into intent:-
+                intent.putExtra("picture", byteArray);
+
                 startActivity(intent);
             }
         });
@@ -104,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     public void showNotification(Context context, String title, String body, Intent intent) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
