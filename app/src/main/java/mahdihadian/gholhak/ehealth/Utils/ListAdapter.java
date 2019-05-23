@@ -53,7 +53,7 @@ public class ListAdapter extends BaseAdapter {
         LinearLayout layout = convertView.findViewById(R.id.layout);
 
         txt_name.setText(userModels.get(position).getName());
-        txt_age.setText(userModels.get(position).getAge() + "");
+        txt_age.setText(userModels.get(position).getAge() + " yo");
         txt_status.setText(userModels.get(position).getStatus());
         txt_heart_beat.setText(String.valueOf(userModels.get(position).getHeartBeat()));
         txt_blood_pressure.setText(String.valueOf(userModels.get(position).getBloodPressure()));

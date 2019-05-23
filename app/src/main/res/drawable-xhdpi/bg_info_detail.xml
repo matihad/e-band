@@ -4,14 +4,15 @@
     >
 
     <gradient
-        android:startColor="#fff"
-        android:centerColor="#fff"
-        android:endColor="#fff"
+        android:startColor="#D33535"
+        android:centerColor="#D33535"
+        android:endColor="#D33535"
         android:angle="270"
 
         />
     <corners
-        android:radius="@dimen/_8sdp"
+        android:bottomLeftRadius="@dimen/_50sdp"
+        android:bottomRightRadius="@dimen/_50sdp"
         />
 
 </shape>
