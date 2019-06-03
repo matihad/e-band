@@ -4,8 +4,12 @@ import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,13 +38,23 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         setSupportActionBar(toolbar_detail);
         bind();
+        changeStatusBarColor();
         setPatientInfo();
         back.setOnClickListener(V -> {
             finish();
         });
 
     }
-
+    private void changeStatusBarColor(){
+        // yani az android 5 be bala age bashe device karbar
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            Window window = getWindow();
+            window.getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
+    }
     private void bind() {
 
         patient_name = findViewById(R.id.patient_name);

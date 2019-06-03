@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.NotificationCompat;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
                 showNotification(MainActivity.this, "Title", "Body", intent);
+
                 return false;
             }
         });
@@ -119,8 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void showNotification(Context context, String title, String body, Intent intent) {
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         int notificationId = 1;
         String channelId = "channel-01";
@@ -136,18 +138,32 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channelId)
                 .setSmallIcon(R.drawable.about_icon_email)
                 .setContentTitle(title)
+                .setColor(Color.parseColor("#BB2A2A"))
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.image_profile))
+
+                // notification will be appear on action bar of the app
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+
                 .setContentText(body);
 
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-        stackBuilder.addNextIntent(intent);
-        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
-                0,
-                PendingIntent.FLAG_UPDATE_CURRENT
-        );
 
-        mBuilder.setContentIntent(resultPendingIntent);
+        Intent open = new Intent(getApplicationContext(), SettingActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(MainActivity.this);
+        stackBuilder.addParentStack(SettingActivity.class);
+        stackBuilder.addNextIntent(open);
+        PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+        mBuilder.setContentIntent(pendingIntent);
+
+
+        stackBuilder.addNextIntent(intent);
+        mBuilder.setContentIntent(pendingIntent);
+
+        // when you navigate to specific page, notification will be hidden.
+        mBuilder.setAutoCancel(true);
+
         notificationManager.notify(notificationId, mBuilder.build());
     }
+
 
     //    baraye in method bayad parameter bezarim ke age
     //    yeki az item haye kebab menu entekhab shod bar un asas sort kone dobare
