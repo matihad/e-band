@@ -50,7 +50,7 @@ public class SettingActivity extends AppCompatActivity {
         bind();
         setSupportActionBar(toolbar_settings);
 
-        back.setOnClickListener(V->{
+        back.setOnClickListener(V -> {
             startActivity(new Intent(this, MainActivity.class));
         });
 
@@ -58,11 +58,10 @@ public class SettingActivity extends AppCompatActivity {
                 .createFromResource(this, R.array.languages, android.R.layout.simple_spinner_dropdown_item);
         spinner_language.setAdapter(languages);
 
-        save_info.setOnClickListener(v->{
+        save_info.setOnClickListener(v -> {
             // get language changes and save it into sharedprefs
             startActivity(new Intent(this, MainActivity.class));
         });
-
 
 
         choosePic.setOnClickListener(v -> {
@@ -79,7 +78,7 @@ public class SettingActivity extends AppCompatActivity {
         save_info = findViewById(R.id.save_info);
         emergency_number = findViewById(R.id.emergency_number);
         toolbar_settings = findViewById(R.id.toolbar_settings);
-        back= findViewById(R.id.back);
+        back = findViewById(R.id.back);
 
         avatar = findViewById(R.id.avatar);
         choosePic = findViewById(R.id.choosePic);
