@@ -8,9 +8,10 @@
     android:orientation="vertical"
     tools:context=".SettingActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <include
@@ -18,6 +19,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -63,122 +75,115 @@
 
         </LinearLayout>
 
-        <ScrollView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
 
-
-            <LinearLayout
+            <!-- user's name -->
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="@dimen/_10sdp">
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
 
-                <!-- user's name -->
-                <TextView
+            <TextView
+                android:id="@+id/saved_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="mahdi hadian"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/account_type" />
+
+            <TextView
+                android:id="@+id/saved_account_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hospital"
+                android:textSize="@dimen/_20sdp" />
+
+            <!-- username (email or phone number)-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/email_or_phone_number" />
+
+            <TextView
+                android:id="@+id/saved_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="mahdihadian@hotmail.com"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/number_of_added_devices" />
+
+            <TextView
+                android:id="@+id/added_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/application_s_language" />
+
+            <!-- language spinner -->
+            <Spinner
+                android:id="@+id/spinner_language"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+            </Spinner>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/emergency_number"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/username" />
+                    android:layout_height="match_parent"
+                    android:hint="@string/emergency_number" />
 
-                <TextView
-                    android:id="@+id/saved_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="mahdi hadian"
-                    android:textSize="@dimen/_20sdp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/account_type" />
-
-                <TextView
-                    android:id="@+id/saved_account_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hospital"
-                    android:textSize="@dimen/_20sdp" />
-
-                <!-- username (email or phone number)-->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/email_or_phone_number" />
-
-                <TextView
-                    android:id="@+id/saved_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="mahdihadian@hotmail.com"
-                    android:textSize="@dimen/_20sdp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/number_of_added_devices" />
-
-                <TextView
-                    android:id="@+id/added_devices"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="10"
-                    android:textSize="@dimen/_20sdp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/application_s_language" />
-
-                <!-- language spinner -->
-                <Spinner
-                    android:id="@+id/spinner_language"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp">
-
-                </Spinner>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
-
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/emergency_number"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="@string/emergency_number" />
-
-                </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>
 
 
-                <Button
-                    android:id="@+id/save_info"
-                    style="@style/Widget.AppCompat.ButtonBar"
-                    android:layout_width="@dimen/_118sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:background="@drawable/background_button"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:padding="@dimen/_4sdp"
-                    android:text="@string/save"
-                    android:textColor="#FFFFFF"
-                    android:textSize="@dimen/_13sdp" />
+            <Button
+                android:id="@+id/save_info"
+                style="@style/Widget.AppCompat.ButtonBar"
+                android:layout_width="@dimen/_118sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/background_button"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/save"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_13sdp" />
 
-
-            </LinearLayout>
-
-
-        </ScrollView>
-
-
-
+        </LinearLayout>
 
     </LinearLayout>
 
+    </ScrollView>
+
 </LinearLayout>
+
+
