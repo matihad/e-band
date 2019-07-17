@@ -18,7 +18,7 @@ public class SignUpActivity extends AppCompatActivity {
     Toolbar toolbar_sign_up;
     ImageButton back;
 
-    EditText id, username, password, password2;
+    EditText username_signup, email_signup, password_signup, password2;
     Button signup;
     Spinner spinner;
 
@@ -44,9 +44,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void bind() {
-        id = findViewById(R.id.id_signup);
-        username = findViewById(R.id.username_signup);
-        password = findViewById(R.id.password_login);
+        username_signup = findViewById(R.id.username_signup);
+        email_signup = findViewById(R.id.email_signup);
+        password_signup = findViewById(R.id.password_signup);
         password2 = findViewById(R.id.password2_signup);
         signup = findViewById(R.id.signup);
         spinner = findViewById(R.id.spinner);

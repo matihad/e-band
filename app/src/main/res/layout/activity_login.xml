@@ -5,77 +5,155 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/_12sdp"
-    android:paddingBottom="@dimen/_30sdp"
     tools:context=".Register.LoginActivity">
 
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/image"
+    <LinearLayout
+        android:id="@+id/linearInfo"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_180sdp" />
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/bg_login"
+        android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/username">
-
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/username_login"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_username_or_phone_number" />
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="Login"
+            android:textColor="#fff"
+            android:textSize="@dimen/_28sdp"
+            android:textStyle="bold" />
 
-    </android.support.design.widget.TextInputLayout>
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_vpn_key_white_24dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            />
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_32sdp">
-
-
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/password_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_your_password" />
-
-    </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:mtf_animationDuration="600"
+            app:mtf_cardCollapsedHeight="2dp"
+            android:id="@+id/loginusername"
+            app:mtf_image="@drawable/ic_email_black_24dp"
+            app:mtf_labelColor="#777777"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColor="#333"
+                android:textSize="@dimen/_15sdp"
+
+                />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:mtf_animationDuration="600"
+            app:mtf_cardCollapsedHeight="2dp"
+            android:id="@+id/loginpassword"
+            app:mtf_image="@drawable/ic_password_black_24dp"
+            app:mtf_labelColor="#777777"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColor="#333"
+                android:textSize="@dimen/_15sdp"
+                android:inputType="textPassword"
+                />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        >
 
         <Button
             android:id="@+id/loginbtn"
             style="@style/Widget.AppCompat.ButtonBar"
-            android:layout_width="@dimen/_118sdp"
+            android:layout_width="@dimen/_230sdp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/_40sdp"
             android:background="@drawable/background_button"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:padding="@dimen/_4sdp"
             android:text="@string/login"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/_13sdp" />
-
-        <Button
-            android:id="@+id/signupbtn"
-            style="@style/Widget.AppCompat.ButtonBar"
-            android:layout_width="@dimen/_118sdp"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:padding="@dimen/_2sdp"
-            android:text="@string/not_signed_up_yet"
-            android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/_13sdp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
+
 
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:orientation="horizontal"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?"
+            android:textColor="#777777"
+            android:textSize="@dimen/_12sdp"
+            />
+
+        <Button
+        android:id="@+id/signupbtn"
+        style="@style/Widget.AppCompat.ButtonBar"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:text="@string/not_signed_up_yet"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
 
 
 </LinearLayout>
