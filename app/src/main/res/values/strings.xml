@@ -4,7 +4,7 @@
     <string name="password">password</string>
     <string name="login">Login</string>
     <string name="enter_username_or_phone_number">enter username or phone number here</string>
-    <string name="not_signed_up_yet">Not Signed Up Yet?</string>
+    <string name="not_signed_up_yet">Register</string>
     <string name="enter_your_password">enter your password</string>
     <string name="enter_your_name">enter your name</string>
     <string name="email_or_phone_number">email or phone number</string>
