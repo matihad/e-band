@@ -18,118 +18,126 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="@dimen/_10sdp">
+            android:layout_height="match_parent">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/patient_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_patient_name" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
 
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/patient_age"
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/patient_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_patient_name" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_patient_age"
-                    android:inputType="number" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_marginTop="@dimen/_10sdp">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp">
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/patient_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_patient_age"
+                        android:inputType="number" />
+                </android.support.design.widget.TextInputLayout>
 
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/patient_weight"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_patient_weight"
-                    android:inputType="number" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_marginTop="@dimen/_10sdp">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp">
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/patient_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_patient_weight"
+                        android:inputType="number" />
+                </android.support.design.widget.TextInputLayout>
 
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/patient_sex"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_patient_sex" />
+                    android:layout_marginTop="@dimen/_10sdp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/patient_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_patient_sex" />
+
+                </android.support.design.widget.TextInputLayout>
 
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp">
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/patient_bloodType"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_patient_blood_type" />
+                    android:layout_marginTop="@dimen/_10sdp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/patient_bloodType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_patient_blood_type" />
 
-            <!-- sabeqe bimari -->
+                </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp">
+                <!-- sabeqe bimari -->
 
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/device_address"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_patient_s_device_address" />
+                    android:layout_marginTop="@dimen/_10sdp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/device_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_patient_s_device_address" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/checked"
-                android:text="click here to..."
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_10sdp" />
+                </android.support.design.widget.TextInputLayout>
 
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/add_device"
-                style="@style/Widget.AppCompat.ButtonBar"
-                android:layout_width="@dimen/_118sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_40sdp"
-                android:background="@drawable/background_button"
-                android:clickable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:padding="@dimen/_4sdp"
-                android:text="@string/add_new_device"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_13sdp"
-
-                />
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/checked"
+                    android:text="click here to..."
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp" />
 
 
-        </LinearLayout>
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/add_device"
+                    style="@style/Widget.AppCompat.ButtonBar"
+                    android:layout_width="@dimen/_118sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="@drawable/background_button"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/add_new_device"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/_13sdp"
+
+                    />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
 
     </LinearLayout>
 

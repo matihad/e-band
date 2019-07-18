@@ -11,6 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedImageView;
+
 import java.util.List;
 
 import mahdihadian.gholhak.ehealth.R;
@@ -51,6 +53,7 @@ public class ListAdapter extends BaseAdapter {
         TextView txt_heart_beat = convertView.findViewById(R.id.txt_heart_beat);
         TextView txt_blood_pressure = convertView.findViewById(R.id.txt_blood_pressure);
         LinearLayout layout = convertView.findViewById(R.id.layout);
+        RoundedImageView roundedImageView =  convertView.findViewById(R.id.profile_pic_listview);
 
         txt_name.setText(userModels.get(position).getName());
         txt_age.setText(userModels.get(position).getAge() + " yo");
@@ -61,20 +64,20 @@ public class ListAdapter extends BaseAdapter {
         //        TODO set flat colors (integer data types...)
 
         if (userModels.get(position).getStatus().contains("Risk")) {
-//            red
-            convertView.setBackgroundColor(Color.rgb(211, 47, 47));
+//            red Color.rgb(211, 47, 47)
+            roundedImageView.setBorderColor(Color.rgb(211, 47, 47));
         }
         if (userModels.get(position).getStatus().contains("Good")) {
-//            green
-            convertView.setBackgroundColor(Color.rgb(56, 142, 60));
+//            greenColor.rgb(56, 142, 60)
+            roundedImageView.setBorderColor(Color.rgb(56, 142, 60));
         }
         if (userModels.get(position).getStatus().contains("Normal")) {
-//            blue
-            convertView.setBackgroundColor(Color.rgb(2, 136, 209));
+//            blue2, 136, 209
+            roundedImageView.setBorderColor(Color.rgb(2, 136, 209));
         }
         if (userModels.get(position).getStatus().contains("Warning")) {
-//            yellow
-            convertView.setBackgroundColor(Color.rgb(251, 192, 45));
+//            yellow251, 192, 45
+            roundedImageView.setBorderColor(Color.rgb(251, 192, 45));
         }
 
         return convertView;
